@@ -1,0 +1,47 @@
+<ActionBar title=""></ActionBar>
+<FlexboxLayout class="page">
+    <StackLayout class="form">
+        
+        <Label class="header" text="Signup"></Label>
+
+        <PreviousNextView>
+
+            <GridLayout rows="auto, auto">
+             
+
+                <StackLayout row="0" class="input-field">
+                   
+                        <Label class="header2" text="Choose a User name"></Label>
+                        <TextField class="input" hint="Email" ></TextField>
+                        <StackLayout class="hr-light"></StackLayout>
+                        <Label class="header2" text="Your Age"></Label>
+                        <TextField  class="input" hint="password" ></TextField>
+                        <Label class="header2" text="Email Address"></Label>
+                        <TextField  class="input" hint="password" ></TextField>
+                        <Label class="header2" text="Phone number"></Label>
+                        <TextField  class="input" hint="password" ></TextField>
+                        <Label class="header2" text="Password"></Label>
+                        <TextField  class="input" hint="password" ></TextField>
+                        
+                    
+                </StackLayout>
+                
+                <StackLayout row="1" >
+                    <GridLayout columns="*,2*" horizontalAlignment="center" >
+                        <Button  text="Signup"class="btn-primary " col="0" (tap)="submit()"></Button>
+                        <Label  text="Already a member" class="login-label" col="1"></Label>
+                    </GridLayout>
+                </StackLayout>
+                
+
+               
+            </GridLayout>
+        </PreviousNextView>
+
+       
+    </StackLayout>
+
+    <Label class="login-label sign-up-label">
+        
+    </Label>
+</FlexboxLayout>
