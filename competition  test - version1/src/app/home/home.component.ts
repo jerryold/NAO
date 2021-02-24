@@ -2,16 +2,21 @@ import { Component, OnInit } from "@angular/core";
 import {Router} from "@angular/router";
 
 @Component({
-    selector: "Login",
-    templateUrl: "./signup.component.html",
-    styleUrls: ['./signup.component.css']
-    
+    selector: "Home",
+    moduleId: module.id,
+    templateUrl: "./home.component.html",
+    styleUrls: ['./home.component.css']
 })
-export class SignupComponent  { 
+export class HomeComponent  {
+
     public constructor(private router: Router) {
         // Use the component constructor to inject providers.
     }
     public submit()
+    {
+        this.router.navigate(["signup"]);
+    }
+    public submit1()
     {
         this.router.navigate(["login"]);
     }
