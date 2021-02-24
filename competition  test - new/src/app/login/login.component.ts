@@ -26,8 +26,8 @@ export class LoginComponent  {
         private userService:UserService) 
     {
         this.user=new User();
-        this.user.email="jack@gmail.com";
-        this.user.password='password';
+        // this.user.email="jack@gmail.com";
+        // this.user.password='password';
     }
     public submit()
     {
@@ -38,6 +38,7 @@ export class LoginComponent  {
         }
         if(this.isLoggingIn){
             this.login();
+            alert('this is login in');
         }
         else{
             this.signUp();
@@ -50,8 +51,10 @@ export class LoginComponent  {
     }
     private login()
     {
+       
         this.userService.login(this.user)
         .subscribe(
+            
             () => this.router.navigate(['/post']),
             (error) => alert('Unfortunately we could not find your account.')
         );
