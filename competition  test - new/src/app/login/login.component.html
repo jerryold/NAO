@@ -23,8 +23,9 @@
                         <Label  text="Forgot your password?" class="login-label" col="1"></Label> -->
                         
                     </GridLayout>
-                    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign Up'" class="btn-primary" (tap)="submit()"></Button>
-                    <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" class="btn-primary" (tap)="toggleDisplay()"></Button>
+                    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign Up'" class="btn-primary" col="0" (tap)="submit()"></Button>
+                    <Label  text="Forgot your password?" class="login-label" col="1" (tap)="toggleDisplay()"></Label> -->
+                    <!-- <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" class="btn-primary" (tap)="toggleDisplay()"></Button> -->
                 </StackLayout>
                 
 

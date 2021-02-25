@@ -1,15 +1,19 @@
-import { Component } from "@angular/core";
-import {User} from './shared/user/user';
-import {UserService} from  './shared/user/user.service';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { RouterExtensions } from "@nativescript/angular";
+import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nativescript-ui-sidedrawer";
+
 
 
 
 @Component({
     selector: "ns-app",
-    templateUrl: "app.component.html"
+    moduleId:module.id,
+    templateUrl: "app.component.html",
+   
+   
+    
 })
 export class AppComponent {
-    
-
+  
 
  }

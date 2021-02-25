@@ -1,23 +1,45 @@
 import { Component, OnInit } from "@angular/core";
-import { RouterExtensions } from "@nativescript/angular/router";
+import {Router} from '@angular/router';
+import {User} from '../shared/user/user';
+import {UserService} from '../shared/user/user.service';
 
 
 
 @Component({
     selector: "Signup",
+    providers:[UserService],
+    moduleId: module.id,
     templateUrl: "./signup.component.html",
     styleUrls: ['./signup.component.css']
     
 })
 export class SignupComponent  { 
-    // public constructor(private router: Router) {
-    //     // Use the component constructor to inject providers.
-    // }
-    // public submit()
-    // {
-    //     this.router.navigate(["login"]);
-    // }
-    // ngOnInit(): void {
-    //     // Init your component properties here.
-    // }
+    public user: User;
+    public isLoggingIn=true;
+
+    constructor(
+        private router:Router, 
+        private userService:UserService) 
+    {
+        this.user=new User();
+        // this.user.email="jack@gmail.com";
+        // this.user.password='password';
+    }
+    public submit1()
+    {
+        this.signUp();
+    }
+    private signUp()
+    {
+        this.userService.register(this.user)
+            .subscribe(
+                () => {   //function()
+                    alert('Your account was successfully created.');
+                    this.router.navigate(['/login']);
+
+                    
+                },
+                () => alert('Unfortunately we were unable to create your account.')
+            );
+    }
 }

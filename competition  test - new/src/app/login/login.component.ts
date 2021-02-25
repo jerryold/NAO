@@ -41,13 +41,15 @@ export class LoginComponent  {
             alert('this is login in');
         }
         else{
-            this.signUp();
+            // this.signUp();
+            this.router.navigate(['/signup']);
         }
        
     }
     public toggleDisplay()
     {
-        this.isLoggingIn= !this.isLoggingIn;
+        // this.isLoggingIn= !this.isLoggingIn;
+        this.router.navigate(['/signup']);
     }
     private login()
     {
@@ -60,17 +62,17 @@ export class LoginComponent  {
         );
     }
 
-    private signUp()
-    {
-        this.userService.register(this.user)
-            .subscribe(
-                () => {   //function()
-                    alert('Your account was successfully created.');
-                    this.toggleDisplay();
-                },
-                () => alert('Unfortunately we were unable to create your account.')
-            );
-    }
+    // private signUp()
+    // {
+    //     this.userService.register(this.user)
+    //         .subscribe(
+    //             () => {   //function()
+    //                 alert('Your account was successfully created.');
+    //                 this.toggleDisplay();
+    //             },
+    //             () => alert('Unfortunately we were unable to create your account.')
+    //         );
+    // }
 }
     
   

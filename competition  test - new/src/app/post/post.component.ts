@@ -1,23 +1,23 @@
 import { Component, OnInit } from "@angular/core";
-import { RouterExtensions } from "@nativescript/angular/router";
+import { Application } from "@nativescript/core";
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
 
 
 @Component({
     selector: "Post",
-    templateUrl: "./post.component.html"
+    templateUrl: "./post.component.html",
+    styleUrls: ['./post.component.css']
    
     
 })
 export class PostComponent  { 
-    // public constructor(private router: Router) {
-    //     // Use the component constructor to inject providers.
-    // }
-    // public submit()
-    // {
-    //     this.router.navigate(["login"]);
-    // }
-    // ngOnInit(): void {
-    //     // Init your component properties here.
-    // }
+    
+    constructor() {
+        // Use the component constructor to inject providers.
+    }
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>Application.getRootView();
+        sideDrawer.showDrawer();
+    }
 }

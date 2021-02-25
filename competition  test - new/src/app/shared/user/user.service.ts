@@ -19,7 +19,9 @@ export class UserService {
             JSON.stringify({
                 action: "Register",
                 info: JSON.stringify({
-                    username: user.email,
+                    username: user.name,
+                    age:user.age,
+                    phone:user.phone,
                     email: user.email,
                     password: user.password
                 })
