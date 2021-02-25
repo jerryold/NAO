@@ -19,7 +19,9 @@ export class UserService {
             JSON.stringify({
                 action: "Register",
                 info: JSON.stringify({
-                    username: user.email,
+                    username: user.name,
+                    age:user.age,
+                    phone:user.phone,
                     email: user.email,
                     password: user.password
                 })
@@ -28,23 +30,6 @@ export class UserService {
         );
     }
     public login(user: User) {
-        alert(
-                JSON.stringify(
-                        this.http.post(
-                        Config.apiUrl,
-                        
-                        JSON.stringify({
-                            action: "Login",
-                            info: JSON.stringify({
-                                username: user.email,
-                                // email: user.email,
-                                password: user.password
-                            })
-                        })
-                        
-                    )
-                )
-        );
         return this.http.post(
             Config.apiUrl,
             JSON.stringify({
@@ -55,19 +40,19 @@ export class UserService {
                     password: user.password
                 })
             }),
-            { headers: this.getCommonHeaders() }
+            // { headers: this.getCommonHeaders() }
         );
     }
 
-    private getCommonHeaders() {
-        return new HttpHeaders({
-            "Content-Type": "application/json",
-            // "Authorization": Config.appUserHeader,
-        });
-    }
+    // private getCommonHeaders() {
+    //     return new HttpHeaders({
+    //         "Content-Type": "application/json",
+    //         // "Authorization": Config.appUserHeader,
+    //     });
+    // }
     
-    private handleErrors(error: HttpErrorResponse) {
-        console.log(JSON.stringify(error));
-        return throwError(error);
-    }
+    // private handleErrors(error: HttpErrorResponse) {
+    //     console.log(JSON.stringify(error));
+    //     return throwError(error);
+    // }
 }
