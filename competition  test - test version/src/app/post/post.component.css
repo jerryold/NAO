@@ -1,0 +1,115 @@
+    .page {
+        justify-content: center;
+        align-items: center;
+        background-color: aquamarine;
+        opacity: 0.5;
+  
+    }
+    .page2 {
+        justify-content: center;
+        align-items: center;
+        background-color: aquamarine;
+        opacity: 0.5;
+      
+    }
+    ActionBar {
+      background-color: rgb(9, 44, 8);
+      justify-content: center;
+      align-items: center;
+     
+      opacity: 0.7;
+    }
+  
+    .form {
+      margin-left: 30;
+      margin-right: 30;
+      flex-grow: 2;
+      vertical-align: middle;
+    }
+    
+    .logo {
+      margin-bottom: 12;
+      height: 90;
+      font-weight: bold;
+    }
+    .header {
+      horizontal-align: left;
+      font-size: 40;
+      font-weight: 600;
+      margin-bottom: 70;
+      text-align: center;
+      color: #19462b;
+    }
+    .header2 {
+      horizontal-align: left;
+      font-size: 20;
+      font-weight: 600;
+      
+      text-align: center;
+      color: #345341;
+    }
+    
+    .input-field {
+      margin-bottom: 25;
+    }
+    .input {
+      text-align: left;
+      font-size: 18;
+      placeholder-color: #A8A8A8;
+    }
+    .input:disabled {
+      background-color: white;
+      opacity: 0.5;
+    }
+    
+    .btn-primary {
+      
+      background-color: rgb(116, 212, 154);
+      border-radius: 20;
+      border-width: 1;
+      color: white;
+      font-size: 18;
+      font-weight: bold;
+    }
+    .btn-primary1 {
+      
+        background-color: rgb(9, 78, 36);
+        width: 200;
+        height: 50;
+        font-size: 24;
+        padding: 0 0 8;
+        border-radius: 50%;
+        color: #fff;
+        margin-right: 15;
+      }
+    .btn-add {
+      
+        background-color: rgb(116, 212, 154);
+        width: 70;
+        height: 70;
+        font-size: 50;
+        padding: 0 0 8;
+        border-radius: 50%;
+        color: #fff;
+        margin-right: 15;
+    }
+    
+    .login-label {
+      horizontal-align: center;
+      color: #105029;
+      font-size: 16;
+    }
+    .sign-up-label {
+      margin-bottom: 20;
+    }
+    .bold {
+      color: #000000; 
+    }
+    .drawer-icon {
+      width: 24;
+      margin: -45 30 15 15;
+  }
+
+
+
+ 
