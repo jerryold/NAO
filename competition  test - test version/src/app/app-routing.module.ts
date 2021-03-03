@@ -8,7 +8,7 @@ import { PersonelComponent} from './personel/personel.component';
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     // { path: "home", loadChildren: "./home/home.module#HomeModule" },
     { path: "login", component: LoginComponent },

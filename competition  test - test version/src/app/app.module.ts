@@ -3,7 +3,8 @@ import { NativeScriptFormsModule, NativeScriptHttpClientModule, NativeScriptModu
 // import { registerElement } from "@nativescript/angular";
 // registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager").PreviousNextView);
 
-
+import{TNSFontIconModule} from "nativescript-ngx-fonticon"
+///
 import { NativeScriptCommonModule } from "@nativescript/angular";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -44,7 +45,9 @@ import { SignupComponent } from "./signup/signup.component";
         NativeScriptFormsModule,
         NativeScriptHttpClientModule,
         
-
+        TNSFontIconModule.forRoot({
+            'fa':'/assets/css/font-awesome.css'
+        })
 
       
     ],

@@ -2,11 +2,12 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    background-image: url("~/images/login.jpg");
-    opacity: 0.7;
-    
-    
+    background: url("~/images/login.png");
+    opacity: 0.9;
+        
   }
+
+  
 /* StackLayout {
     width: 300;
     padding: 10 16;
@@ -44,19 +45,25 @@
   
   .header {
     horizontal-align: center;
-    font-size: 70;
-    font-weight: 600;
-    margin-bottom: 70;
+    overflow: hidden;
+    font-family:Merriweather-Regular;
+    font-size: 55px;
+    margin-bottom: 10;
     text-align: center;
-    color: #06641a;
+    color: #1b4332;
   }
   .header2 {
     horizontal-align: center;
-    font-size: 30;
-    font-weight: 600;
-    margin-bottom: 200;
+    font-size: 35px;
+    font-weight: 328px;
+    font-family:Lato-Regular;
+    top: 297px;
+	  left: 19px;
+    margin-bottom: 150;
     text-align: center;
-    color: #2bd14f;
+    overflow: hidden;
+    color: #1b4332;
+    opacity:0.799;
   }
   
 
@@ -64,23 +71,38 @@
 
   
   .my-button {
-    android-elevation: 4;
-    background-color: rgb(2, 29, 13);
-    border-radius: 20;
-    border-width: 1;
+    /* android-elevation: 4; */
+    font-family: Lato-Regular;
+    background: #1b4332;
+    /* border-radius: 20;
+    border-width: 1; */
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 15px;
     color: white;
     font-size: 18;
     font-weight: bold;
+    width: 700px;
   }
 
   .my-button2 {
-    android-elevation: 4;
-    background-color: rgb(160, 236, 191);
-    border-radius: 20;
-    border-width: 1;
+    /* android-elevation: 4; */
+    font-family: Lato-Regular;
+    background-color: #95d5b2;
+    /* border-radius: 20;
+    border-width: 1; */
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 15px;
     color: white;
     font-size: 18;
     font-weight: bold;
+    width: 700px;
+    
   }
   .login-label {
     horizontal-align: center;
