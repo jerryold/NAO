@@ -13,9 +13,9 @@ import {UserService} from '../shared/user/user.service';
     styleUrls: ['./signup.component.css']
     
 })
-export class SignupComponent  { 
+export class SignupComponent  {  
     public user: User;
-    public isLoggingIn=true;
+    // public isLoggingIn=true;
 
     constructor(
         private router:Router, 
@@ -33,10 +33,10 @@ export class SignupComponent  {
     {
         this.userService.register(this.user)
             .subscribe(
-                () => {   //function()
-                    alert('Your account was successfully created.');
+                (data) => {   //function()
+                    alert(data);
                     this.router.navigate(['/login']);
-
+                    
                     
                 },
                 () => alert('Unfortunately we were unable to create your account.')

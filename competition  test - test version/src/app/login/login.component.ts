@@ -8,6 +8,7 @@ import {UserService} from '../shared/user/user.service';
 
 
 
+
 @Component({
     selector: "Login",
     providers:[UserService],
@@ -16,33 +17,42 @@ import {UserService} from '../shared/user/user.service';
     styleUrls: ['./login.component.css']
     
 })
-export class LoginComponent  {
+export class LoginComponent {
    
     public user: User;
-    public isLoggingIn=true;
+    public user2:User;
+    public data:object;
+    
+    
+    
 
     constructor(
         private router:Router, 
         private userService:UserService) 
     {
-        this.user=new User();
+        this.user=new User;
+        this.data={};
+        // this.user2=this.userService.register(this.user2);
         // this.user.email="jack@gmail.com";
         // this.user.password='password';
     }
     public submit()
     {
-        if(!this.user.isValidEmail())
-        {
-            alert('Enter a valid email address.');
-            return;
-        }
-        if(this.isLoggingIn){
-            this.login();
-            alert('this is login in');
+        // if(!this.user.isValidEmail())
+        // {
+        //     alert('Enter a valid email address.');
+        //     return;
+        // }
+        this.login();
+        if(this.data.toString()=="Welcome back!"){
+            
+            // alert('this is login in');
+            this.router.navigate(['/post']);
         }
         else{
-            // this.signUp();
+            alert(JSON.stringify(this.data));            
             this.router.navigate(['/signup']);
+            // this.signUp();
         }
        
     }
@@ -51,14 +61,24 @@ export class LoginComponent  {
         // this.isLoggingIn= !this.isLoggingIn;
         this.router.navigate(['/signup']);
     }
+   
     private login()
     {
        
         this.userService.login(this.user)
         .subscribe(
             
-            () => this.router.navigate(['/post']),
-            (error) => alert('Unfortunately we could not find your account.')
+            (data) => 
+            {
+                alert(data);
+                this.data=data;
+                this.router.navigate(['/post']);
+                
+            },
+            () => 
+            {
+                alert('Unfortunately we could not find your account.');
+            }
         );
     }
 
@@ -68,7 +88,7 @@ export class LoginComponent  {
     //         .subscribe(
     //             () => {   //function()
     //                 alert('Your account was successfully created.');
-    //                 this.toggleDisplay();
+    //                 this.toggleDisplay2();
     //             },
     //             () => alert('Unfortunately we were unable to create your account.')
     //         );

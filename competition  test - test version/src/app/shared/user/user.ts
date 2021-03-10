@@ -7,8 +7,8 @@ export class User {
     phone:string;
     password: string;
 
-    public isValidEmail(){
-        return validator.validate(this.email);
-    }
+    // public isValidEmail(){
+    //     return validator.validate(this.email);
+    // }
    
 }
