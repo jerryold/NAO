@@ -22,6 +22,7 @@ import { LoginComponent } from "./login/login.component";
 import { PersonelComponent } from "./personel/personel.component";
 import { PostComponent } from "./post/post.component";
 import { SignupComponent } from "./signup/signup.component";
+import { ArticleComponent } from "./article/article.component";
 
 // import { KinveyModule, UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 
@@ -56,7 +57,8 @@ import { SignupComponent } from "./signup/signup.component";
         LoginComponent,
         SignupComponent,
         PostComponent,
-        PersonelComponent
+        PersonelComponent,
+        ArticleComponent
         
         
         

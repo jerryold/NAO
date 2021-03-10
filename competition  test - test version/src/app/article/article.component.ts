@@ -11,12 +11,12 @@ import {PostService} from '../shared/post/post.service';
     selector: "Post",
     providers:[PostService],
     moduleId: module.id,
-    templateUrl: "./post.component.html",
-    styleUrls: ['./post.component.css']
+    templateUrl: "./article.component.html",
+    styleUrls: ['./article.component.css']
    
     
 })
-export class PostComponent  { 
+export class ArticleComponent  { 
     
     public post: Post;
 
@@ -36,8 +36,8 @@ export class PostComponent  {
     {
         this.postService.Publish(this.post)
             .subscribe(
-                (data) => {   //function()
-                    alert(data);
+                () => {   //function()
+                    alert('Your Publish was successfully created.');
                     this.router.navigate(['/personel']);
 
                     
