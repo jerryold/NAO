@@ -20,7 +20,6 @@ import {UserService} from '../shared/user/user.service';
 export class LoginComponent {
    
     public user: User;
-    public user2:User;
     public data:object;
     
     
@@ -50,8 +49,8 @@ export class LoginComponent {
             this.router.navigate(['/post']);
         }
         else{
-            alert(JSON.stringify(this.data));            
-            this.router.navigate(['/signup']);
+            // alert("The account doesn's exist");            
+            // this.router.navigate(['/signup']);
             // this.signUp();
         }
        
@@ -72,7 +71,7 @@ export class LoginComponent {
             {
                 alert(data);
                 this.data=data;
-                this.router.navigate(['/post']);
+                
                 
             },
             () => 

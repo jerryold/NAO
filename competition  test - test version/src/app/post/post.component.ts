@@ -38,7 +38,7 @@ export class PostComponent  {
             .subscribe(
                 (data) => {   //function()
                     alert(data);
-                    this.router.navigate(['/personel']);
+                    this.router.navigate(['/article']);
 
                     
                 },

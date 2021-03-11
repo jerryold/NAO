@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Application } from "@nativescript/core";
-import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import { DataManager, Query } from '@syncfusion/ej2-data';
 import {Router} from '@angular/router';
 import { Post } from "../shared/post/post";
 import {PostService} from '../shared/post/post.service';
+import { Observable } from 'rxjs';
+import { from } from "rxjs";
 
 
 
@@ -16,38 +17,62 @@ import {PostService} from '../shared/post/post.service';
    
     
 })
-export class ArticleComponent  { 
+export class ArticleComponent 
+{ 
+    public article: Post;
+    public data:object;
     
-    public post: Post;
+    
+    
 
     constructor(
         private router:Router, 
         private postService:PostService) 
     {
-        this.post=new Post();
+        this.article=new Post();
+        this.data={};
+        
     }
-
-    public submit2()
+    public submit()
     {
-       this.publish();
-              
+       
+        this.text();
+        if(this.data.toString()=="Welcome back!"){
+            
+            
+            this.router.navigate(['/post']);
+        }
+        else{
+            
+        }
+       
     }
-    private publish()
+    public toggleDisplay()
     {
-        this.postService.Publish(this.post)
-            .subscribe(
-                () => {   //function()
-                    alert('Your Publish was successfully created.');
-                    this.router.navigate(['/personel']);
-
-                    
-                },
-                () => alert('Unfortunately we were unable to create your publish.')
-            );
+        // this.isLoggingIn= !this.isLoggingIn;
+        this.router.navigate(['/signup']);
+    }
+   
+    private text()
+    {
+       
+        this.postService.Publish(this.article)
+        .subscribe(
+            
+            (data) => 
+            {
+                alert(data);
+                this.data=data;
+                
+                
+            },
+            () => 
+            {
+                alert('Unfortunately we could not find your account.');
+            }
+        );
     }
 
-    // onDrawerButtonTap(): void {
-    //     const sideDrawer = <RadSideDrawer>Application.getRootView();
-    //     sideDrawer.showDrawer();
-    // }
+   
 }
+        

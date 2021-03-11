@@ -1,0 +1,9 @@
+diff a/competition  test - test version/src/app/app.module.ts b/competition  test - test version/src/app/app.module.ts	(rejected hunks)
+@@ -22,6 +22,7 @@
+ import { PersonelComponent } from "./personel/personel.component";
+ import { PostComponent } from "./post/post.component";
+ import { SignupComponent } from "./signup/signup.component";
++import { ArticleComponent } from "./article/article.component";
+ 
+ // import { KinveyModule, UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
+ 
