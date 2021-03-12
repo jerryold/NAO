@@ -11,18 +11,28 @@
 	
 
     
-    <StackLayout class="form">
+    <StackLayout *ngFor="let item of article">
+        <Label [text]="item.name"></Label> 
+        <Label [text]="item.description"></Label> 
+        <Label [text]="item.ingredient"></Label> 
+        <Label [text]="item.price"></Label> 
+     </StackLayout>
 		
-
-        <ul>   
-            <li *ngFor="let i of item" [value]="i">               
-                {{i.name}}
-            </li>
-        </ul>
+    
+        <!-- <li *ngFor="let a of article">   
+            {{a}}
+          
+        </li> -->
+        <!-- <li *ngFor="let a of (article| keyvalue)">   
+            {{a.key}}
+          
+        </li> -->
+        
         <!-- <Button text="Test" class="btn-primary" col="0" (tap)="submit3()"></Button> -->
-
+        
        
-    </StackLayout>
+   
+    
 
  
 </FlexboxLayout>

@@ -5,6 +5,7 @@ import { Post } from "../shared/post/post";
 import {PostService} from '../shared/post/post.service';
 import { Observable } from 'rxjs';
 import { from } from "rxjs";
+import { HttpErrorResponse } from "@angular/common/http";
 
 
 
@@ -19,16 +20,16 @@ import { from } from "rxjs";
 })
 export class ArticleComponent implements OnInit
 { 
-    public article: object;
+   
     // public item:Array<any>=new Array<any>();
-    public item:object;
     
+    public article:Array<any> = new Array<any>();//因為會有多筆，先建一個any型別的陣列資料來接回傳值
     constructor(
         private router:Router, 
         private postService:PostService) 
     { 
-        this.article={};
-        this.item=[];
+        // this.article=[];
+        
     }
     ngOnInit()
     {
@@ -41,15 +42,19 @@ export class ArticleComponent implements OnInit
     getData(){
         this.postService.Article()
         .subscribe(
-            (response)=>{
-                this.item=response;
-                alert(JSON.stringify(this.item))
-                // console.log(this.item);
+            (response:any)=>{
+                this.article=response;
+                alert(this.article)
+                
+                console.log(this.article);
+               
+                
             },
-            (data)=>alert(JSON.stringify(data))
+            (error:HttpErrorResponse)=>this.postService.HandleError(error)
         );
 
     }
+    
    
    
 
