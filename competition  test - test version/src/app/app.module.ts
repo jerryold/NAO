@@ -1,3 +1,4 @@
+import { BrowserModule} from'@angular/platform-browser'
 import { NgModule, NO_ERRORS_SCHEMA} from "@angular/core";
 import { NativeScriptFormsModule, NativeScriptHttpClientModule, NativeScriptModule, NativeScriptRouterModule, RouterExtensions } from "@nativescript/angular";
 // import { registerElement } from "@nativescript/angular";
@@ -23,6 +24,8 @@ import { PersonelComponent } from "./personel/personel.component";
 import { PostComponent } from "./post/post.component";
 import { SignupComponent } from "./signup/signup.component";
 import { ArticleComponent } from "./article/article.component";
+import { from } from "rxjs";
+import { HttpClientModule } from "@angular/common/http";
 
 // import { KinveyModule, UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 
@@ -33,6 +36,8 @@ import { ArticleComponent } from "./article/article.component";
         AppComponent
     ],
     imports: [
+        BrowserModule,
+        HttpClientModule,
         NativeScriptModule,        
         AppRoutingModule,
         NativeScriptUISideDrawerModule,

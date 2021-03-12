@@ -17,7 +17,7 @@ export class PostService {
         return this.http.post(
             Config2.apiUrl,
             JSON.stringify({
-                action: "Post",
+                action: "post",
                 info: JSON.stringify({
                     name: post.name,
                     description: post.description,
@@ -29,6 +29,22 @@ export class PostService {
            
         );
     }
-
+    public Article() {
+        return this.http.post(
+            Config2.apiUrl,
+            JSON.stringify({
+                action: "load",
+                info: JSON.stringify({
+                   
+                    
+                })
+            }),
+           
+        );
+    }
+    public HandleError(e:any):void{
+        alert(e.error.error);
+        
+    }
     
 }

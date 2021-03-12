@@ -14,10 +14,12 @@
     <StackLayout class="form">
 		
 
-            <GridLayout rows="auto, auto, auto,auto,auto,auto">
-			                     
-            </GridLayout>
-        
+        <ul>   
+            <li *ngFor="let i of item" [value]="i">               
+                {{i.name}}
+            </li>
+        </ul>
+        <!-- <Button text="Test" class="btn-primary" col="0" (tap)="submit3()"></Button> -->
 
        
     </StackLayout>

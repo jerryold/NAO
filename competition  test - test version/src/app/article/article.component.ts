@@ -17,61 +17,41 @@ import { from } from "rxjs";
    
     
 })
-export class ArticleComponent 
+export class ArticleComponent implements OnInit
 { 
-    public article: Post;
-    public data:object;
+    public article: object;
+    // public item:Array<any>=new Array<any>();
+    public item:object;
     
-    
-    
-
     constructor(
         private router:Router, 
         private postService:PostService) 
-    {
-        this.article=new Post();
-        this.data={};
-        
+    { 
+        this.article={};
+        this.item=[];
     }
-    public submit()
+    ngOnInit()
     {
-       
-        this.text();
-        if(this.data.toString()=="Welcome back!"){
-            
-            
-            this.router.navigate(['/post']);
-        }
-        else{
-            
-        }
-       
+        this.getData();
     }
-    public toggleDisplay()
-    {
-        // this.isLoggingIn= !this.isLoggingIn;
-        this.router.navigate(['/signup']);
+    // submit3()
+    // {
+    //     this.getData();
+    // }
+    getData(){
+        this.postService.Article()
+        .subscribe(
+            (response)=>{
+                this.item=response;
+                alert(JSON.stringify(this.item))
+                // console.log(this.item);
+            },
+            (data)=>alert(JSON.stringify(data))
+        );
+
     }
    
-    private text()
-    {
-       
-        this.postService.Publish(this.article)
-        .subscribe(
-            
-            (data) => 
-            {
-                alert(data);
-                this.data=data;
-                
-                
-            },
-            () => 
-            {
-                alert('Unfortunately we could not find your account.');
-            }
-        );
-    }
+   
 
    
 }
