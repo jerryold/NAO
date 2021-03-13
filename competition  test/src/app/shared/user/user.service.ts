@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 
 import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { Config } from '../config';
+import { Observable } from 'rxjs';
 
 
 
@@ -13,7 +14,7 @@ import { Config } from '../config';
 export class UserService {
     constructor(private http: HttpClient) { }
 
-    public register(user: User) {
+   public register(user: User): Observable<any> {
         return this.http.post(
             Config.apiUrl,
             JSON.stringify({

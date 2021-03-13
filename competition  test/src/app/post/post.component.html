@@ -24,30 +24,30 @@
 				</StackLayout>
                 <StackLayout row="1" class="input-field">
                     <Label class="header2" text="Name"></Label>
-                    <TextField  class="input" hint="Write a name for your produce here" ></TextField>
+                    <TextField   [(ngModel)]="post.name" class="input" hint="Write a name for your product here" ></TextField>
                    
                 </StackLayout>
 
                 <StackLayout row="2" class="input-field">
                     <Label class="header2" text="Description"></Label>
-                    <TextField  class="input" hint="Decscribe your product here" ></TextField>
+                    <TextField  [(ngModel)]="post.description"class="input" hint="Decscribe your product here" ></TextField>
                     
                 </StackLayout>
                 <StackLayout row="3" >
                     <Label class="header2" text="Ingredient"></Label>
-                    <TextField  class="input" hint="Detail the Ingredient here" ></TextField>
+                    <TextField [(ngModel)]="post.ingredient" class="input" hint="Detail the Ingredient here" ></TextField>
                    
                 </StackLayout>
 				<StackLayout row="4" >
                     <Label class="header2" text="Price"></Label>
-                    <TextField  class="input" hint="Free" ></TextField>
+                    <TextField [(ngModel)]="post.price" class="input" hint="Free" ></TextField>
                     
                 </StackLayout>     
 				<StackLayout row="5" >
                     <GridLayout columns="*,2*" horizontalAlignment="right" >
                         <!-- <Button  text="Login"class="btn-primary " col="0" (tap)="submit()"></Button>
                         <Label  text="Forgot your password?" class="login-label" col="1"></Label> -->
-                        <Button text="Publish" class="btn-primary" col="1" ></Button>
+                        <Button text="Publish" class="btn-primary" col="1" (tap)='submit2()'></Button>
                     </GridLayout>                    
                     <!-- <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" class="btn-primary" (tap)="toggleDisplay()"></Button> -->
                 </StackLayout>                          
