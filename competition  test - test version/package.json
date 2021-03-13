@@ -42,6 +42,7 @@
     "kinvey-nativescript-sdk": "^6.0.1",
     "nativescript-barcodescanner": "^4.0.1",
     "nativescript-fontawesome": "^1.0.0",
+    "nativescript-geolocation": "^5.1.0",
     "nativescript-ngx-fonticon": "^7.0.0",
     "nativescript-snackbar": "^4.1.2",
     "nativescript-ui-autocomplete": "^7.0.2",
