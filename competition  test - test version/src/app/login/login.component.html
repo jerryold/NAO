@@ -1,0 +1,41 @@
+<ActionBar title=""></ActionBar>
+<FlexboxLayout class="page">
+    <StackLayout class="form">
+        
+        <Label class="header" text="Login"></Label>
+
+        <PreviousNextView>
+            <GridLayout rows="auto, auto, auto">
+                <StackLayout row="0" class="input-field">
+                    
+                    <Label class="header2" text="Email Address"></Label>
+                    <TextField [(ngModel)]="user.email" class="input" hint="Email" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+
+                <StackLayout row="1" class="input-field">
+                    <Label class="header2" text="PASSWORD"></Label>
+                    <TextField  [(ngModel)]="user.password" class="input" hint="password" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout row="2" >
+                    <GridLayout columns="*,2*" horizontalAlignment="center" >
+                        <!-- <Button  text="Login"class="btn-primary " col="0" (tap)="submit()"></Button>
+                        <Label  text="Forgot your password?" class="login-label" col="1"></Label> -->
+                        
+                    </GridLayout>
+                    <Button text="SignIn" class="btn-primary" col="0" (tap)="submit()"></Button>
+                    <Label  text="Forgot your password?" class="login-label" col="1" (tap)="toggleDisplay()"></Label> -->
+                    <!-- <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" class="btn-primary" (tap)="toggleDisplay()"></Button> -->
+                </StackLayout>
+                
+
+               
+            </GridLayout>
+        </PreviousNextView>
+
+       
+    </StackLayout>
+
+ 
+</FlexboxLayout>

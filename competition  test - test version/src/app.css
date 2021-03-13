@@ -1,0 +1,25 @@
+@import "~@nativescript/theme/css/core.css";
+
+.far {
+    font-family: Font Awesome 5 Free, fa-regular-400;
+    font-weight: 400; 
+}
+
+.fab {
+    font-family: Font Awesome 5 Brands, fa-brands-400;
+    font-weight: 400; 
+}
+
+.fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900; 
+}
+.Merriweather-R
+{
+    font-family: Font Awesome 5 Free, Merriweather-Regular;
+    font-weight: 900; 
+    
+}
+
+
+
