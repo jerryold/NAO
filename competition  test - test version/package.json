@@ -34,6 +34,8 @@
     "@angular/platform-browser": "~11.0.0",
     "@angular/platform-browser-dynamic": "~11.0.0",
     "@angular/router": "~11.0.0",
+    "@nativescript-community/ui-drawer": "0.0.24",
+    "@nativescript-community/ui-pager": "^13.0.14",
     "@nativescript/angular": "~11.0.0",
     "@nativescript/core": "~7.1.0",
     "@nativescript/theme": "~3.0.0",

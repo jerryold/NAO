@@ -26,6 +26,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { ArticleComponent } from "./article/article.component";
 import { from } from "rxjs";
 import { HttpClientModule } from "@angular/common/http";
+import { DrawerModule } from "@nativescript-community/ui-drawer/angular";
 
 // import { KinveyModule, UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 
@@ -36,6 +37,7 @@ import { HttpClientModule } from "@angular/common/http";
         AppComponent
     ],
     imports: [
+        DrawerModule,
         BrowserModule,
         HttpClientModule,
         NativeScriptModule,        
@@ -50,6 +52,7 @@ import { HttpClientModule } from "@angular/common/http";
         NativeScriptCommonModule,
         NativeScriptFormsModule,
         NativeScriptHttpClientModule,
+        
         
         TNSFontIconModule.forRoot({
             'fa':'/assets/css/font-awesome.css'

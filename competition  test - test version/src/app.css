@@ -14,12 +14,28 @@
     font-family: Font Awesome 5 Free, fa-solid-900;
     font-weight: 900; 
 }
-.Merriweather-R
-{
-    font-family: Font Awesome 5 Free, Merriweather-Regular;
-    font-weight: 900; 
-    
+
+/*sidedrawer*/
+.btn {
+    font-size: 18;
 }
 
+.drawer-container {
+    text-align: center;
+    vertical-align: center;
+}
+
+.drawer-heading {
+    color: white;
+    font-family: "Varela", "varela-regular"; 
+    font-size: 24; 
+}
+
+.drawer-item {
+    color: white;
+    font-family: "Varela", "varela-regular"; 
+    font-size: 18;
+    background-color: #4673c1;
+}
 
 
