@@ -42,4 +42,9 @@ export class SignupComponent  {
                 () => alert('Unfortunately we were unable to create your account.')
             );
     }
+    public Alreadymember()
+    {
+        // this.isLoggingIn= !this.isLoggingIn;
+        this.router.navigate(['/login']);
+    }
 }

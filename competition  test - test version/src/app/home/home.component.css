@@ -1,12 +1,21 @@
+.page {
+  align-items: center;
+  flex-direction: column;
+}
  FlexboxLayout {
     justify-content: center;
     align-items: center;
     background-size: cover;
     background: url("~/images/login.png");
-    opacity: 0.9;
+    opacity: 1;
         
   }
 
+  .logo {
+    margin-bottom: 12;
+    height: 90;
+    font-weight: bold;
+  }
   
 /* StackLayout {
     width: 300;
@@ -41,22 +50,32 @@
     opacity: 0.7;
   }
 
+  .form {
+    margin-left: 30;
+    margin-right: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+  }
+
   
   
   .header {
     horizontal-align: center;
     overflow: hidden;
-    font-family:Merriweather-Regular;
+    font-family:Pacifico-Regular,Arial;
     font-size: 55px;
     margin-bottom: 10;
     text-align: center;
-    color: #1b4332;
+    color: rgb(27, 67, 50);
+    white-space: pre;
+    font-style: normal;
+    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
   }
   .header2 {
     horizontal-align: center;
     font-size: 35px;
     font-weight: 328px;
-    font-family:Lato-Regular;
+    font-family:Lato-Regular,Arial;
     top: 297px;
 	  left: 19px;
     margin-bottom: 150;
@@ -72,7 +91,7 @@
   
   .my-button {
     /* android-elevation: 4; */
-    font-family: Lato-Regular;
+    font-family: Lato-Regular,Arial;
     background: #1b4332;
     /* border-radius: 20;
     border-width: 1; */
@@ -89,7 +108,7 @@
 
   .my-button2 {
     /* android-elevation: 4; */
-    font-family: Lato-Regular;
+    font-family: Lato-Regular,Arial;
     background-color: #95d5b2;
     /* border-radius: 20;
     border-width: 1; */
@@ -104,14 +123,16 @@
     width: 700px;
     
   }
-  .login-label {
+  .business-label {
+    font-family: Lato-Regular,Arial;
     horizontal-align: center;
-    color: #A8A8A8;
+    color:rgba(255, 255, 255, 1);
     font-size: 16;
+    text-decoration: underline;
+    margin-top: 30px;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
   }
-  .sign-up-label {
-    margin-bottom: 20;
-  }
-  .bold {
-    color: #000000; 
-  }
+ 

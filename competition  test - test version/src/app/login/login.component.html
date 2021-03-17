@@ -8,13 +8,13 @@
             <GridLayout rows="auto, auto, auto">
                 <StackLayout row="0" class="input-field">
                     
-                    <Label class="header2" text="Email Address"></Label>
-                    <TextField [(ngModel)]="user.email" class="input" hint="Email" ></TextField>
+                    <Label class="logintext" text="EMAIL ADDRESS"></Label>
+                    <TextField [(ngModel)]="user.email" class="input" hint="yourmail@nao.com" ></TextField>
                     <StackLayout class="hr-light"></StackLayout>
                 </StackLayout>
 
                 <StackLayout row="1" class="input-field">
-                    <Label class="header2" text="PASSWORD"></Label>
+                    <Label class="logintext" text="PASSWORD"></Label>
                     <TextField  [(ngModel)]="user.password" class="input" hint="password" ></TextField>
                     <StackLayout class="hr-light"></StackLayout>
                 </StackLayout>
@@ -22,20 +22,26 @@
                     <GridLayout columns="*,2*" horizontalAlignment="center" >
                         <!-- <Button  text="Login"class="btn-primary " col="0" (tap)="submit()"></Button>
                         <Label  text="Forgot your password?" class="login-label" col="1"></Label> -->
-                        
+                        <Button text="LOGIN" class="btn-primary" col="0" (tap)="submit()"></Button>
+                        <Label  text="Forgot your password?" class="login-label" col="1" (tap)="toggleDisplay()"></Label> -->
                     </GridLayout>
-                    <Button text="SignIn" class="btn-primary" col="0" (tap)="submit()"></Button>
-                    <Label  text="Forgot your password?" class="login-label" col="1" (tap)="toggleDisplay()"></Label> -->
-                    <!-- <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" class="btn-primary" (tap)="toggleDisplay()"></Button> -->
+                    <!-- <Button text="SignIn" class="btn-primary" col="0" (tap)="submit()"></Button>
+                    <Label  text="Forgot your password?" class="login-label" col="1" (tap)="toggleDisplay()"></Label> --> -->
+                    
                 </StackLayout>
-                
+              
 
                
             </GridLayout>
         </PreviousNextView>
+       
 
        
     </StackLayout>
-
+    <StackLayout class="sign-upbox">
+                    
+        <Label  text="Don't have an account?Sign up" class="forgetpwd" col="1"></Label> -->
+    </StackLayout>
+    
  
 </FlexboxLayout>

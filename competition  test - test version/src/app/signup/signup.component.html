@@ -11,15 +11,15 @@
 
                 <StackLayout row="0" class="input-field">
                    
-                        <Label class="header2" text="Choose a User name"></Label>
+                        <Label class="signuptext" text="Choose a User name"></Label>
                         <TextField  [(ngModel)]="user.name" class="input" hint="name" ></TextField>
-                        <Label class="header2" text="Your Age"></Label>
+                        <Label class="signuptext" text="Your Age"></Label>
                         <TextField [(ngModel)]="user.age" class="input" hint="age" ></TextField>
-                        <Label class="header2" text="Email Address"></Label>
+                        <Label class="signuptext" text="Email Address"></Label>
                         <TextField  [(ngModel)]="user.email"class="input" hint="email" ></TextField>
-                        <Label class="header2" text="Phone number"></Label>
+                        <Label class="signuptext" text="Phone number"></Label>
                         <TextField   [(ngModel)]="user.phone"class="input" hint="phone" ></TextField>
-                        <Label class="header2" text="Password"></Label>
+                        <Label class="signuptext" text="Password"></Label>
                         <TextField [(ngModel)]="user.password" class="input" hint="password" ></TextField>
                         
                     
@@ -28,7 +28,7 @@
                 <StackLayout row="1" >
                     <GridLayout columns="*,2*" horizontalAlignment="center" >
                         <Button  text="Signup" class="btn-primary " col="0" (tap)="submit1()"></Button>
-                        <Label  text="Already a member" class="login-label" col="1"></Label>
+                        <Label  text="Already a member" class="login-label" col="1" (tap)="Alreadymember()"></Label>
                     </GridLayout>
                 </StackLayout>
                 
