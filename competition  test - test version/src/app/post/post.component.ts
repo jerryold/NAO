@@ -46,6 +46,8 @@ export class PostComponent  {
             );
     }
 
+    
+
     // onDrawerButtonTap(): void {
     //     const sideDrawer = <RadSideDrawer>Application.getRootView();
     //     sideDrawer.showDrawer();

@@ -5,13 +5,7 @@
         opacity: 0.5;
   
     }
-    .page2 {
-        justify-content: center;
-        align-items: center;
-        background-color: aquamarine;
-        opacity: 0.5;
-      
-    }
+   
     /* ActionBar {
       background-color: rgb(9, 44, 8);
       justify-content: center;
@@ -114,6 +108,8 @@
       .action-bar {
         background-color: rgb(27, 67, 50);
         color: White;
+        
+        
     }
 
       .action-bar-label {
@@ -155,6 +151,13 @@
     .description-label{
         margin-bottom: 15;
     }
+
+    .menu-icon {
+      font-size: 40px; 
+      color: white;
+      padding-left: 13;
+      vertical-align: center;
+  } 
 
     
 
