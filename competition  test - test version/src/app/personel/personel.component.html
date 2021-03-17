@@ -1,19 +1,78 @@
-<ActionBar title="SideDrawerApp">
-    <ActionItem position="right">
-      <Button text="Back"></Button>
-    </ActionItem>
- </ActionBar>
- <RadSideDrawer #sidedrawerId tkExampleTitle tkToggleNavButton>
-    <AbsoluteLayout tkMainContent dock="top" >
-        <Button class="header-bar"></Button>
-        <Image src="~/images/logo.png" height="77" width="95" class="logo"></Image>
+<ActionBar title=""></ActionBar>
+ <RadSideDrawer #sidedrawerId drawerTransition="PushTransition">
+    <AbsoluteLayout tkMainContent dock="top" class="ProfileBackground" >
+        
+        
         <Button left="250" text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
     </AbsoluteLayout>
-    <StackLayout tkDrawerContent class="sideStackLayout">
-        <StackLayout class="sideTitleStackLayout">
-            <Label text="Navigation Menu"></Label>
+
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <StackLayout class="sidedrawer-header">
+            <Image src="~/images/profile.jpg" class="profileimg"></Image>
+            <Label class="sidedrawer-header-text var" text="Akira Wu"></Label>
+            <Label class="sidedrawer-header-footnote var" text="EDIT Profile"></Label>
         </StackLayout>
-        <StackLayout class="sideStackLayout">
+
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Home" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf2bb;" class="fa sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Explore" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item sidedrawer-list-item-active"
+                    title="Settings" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf07a;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Transactions" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Search" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf2c1;" class="fa sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Profile" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Camera" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf013;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Setting" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Store" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf086;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Contact us" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                   
+                </GridLayout>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" title="LogOut" tap="onNavigationItemTap">
+                    <Label class="profiletext" text="Logout"    (tap)="onCloseDrawerTap()"></Label>
+                </GridLayout>
+                <StackLayout class="hr-light"></StackLayout>
+                <!-- <Label class="profiletext" text="Logout"    (tap)="onCloseDrawerTap()"></Label> -->
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+
+    <!-- <GridLayout tkDrawerContent class="sideStackLayout">
+        <StackLayout backgroundColor="#213c6b">
+            <StackLayout height="56" class="drawer-container">
+                <Label text="My Favorite Cities" class="drawer-heading"></Label>
+            </StackLayout>
+            <Label text="Logout" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
+        </StackLayout>
+    </GridLayout> -->
+
+        <!-- <StackLayout class="sideStackLayout">
             <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
             <Label text="Social" class="sideLabel"></Label>
             <Label text="Promotions" class="sideLabel"></Label>
@@ -24,7 +83,10 @@
             <Label text="Drafts" class="sideLabel"></Label>
         </StackLayout>
         <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
-    </StackLayout>
+    </GridLayout> -->
+
+
+
 </RadSideDrawer>
 
 

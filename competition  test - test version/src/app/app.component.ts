@@ -7,7 +7,6 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nat
 
 @Component({
     selector: "ns-app",
-    moduleId:module.id,
     templateUrl: "app.component.html",
    
    
