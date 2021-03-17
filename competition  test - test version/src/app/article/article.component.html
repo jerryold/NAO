@@ -1,22 +1,40 @@
-<ActionBar title="Article" class="action-bar">
+<ActionBar class="action-bar">
+    <Label text="Bulletin Board" class="action-bar-label"></Label>
+</ActionBar>        
     
-   
-       
-        
-    
-</ActionBar>
 
 
-<FlexboxLayout class="page">
+
 	
 
     
-    <StackLayout *ngFor="let item of article">
+    <GridLayout tkExampleTitle tkToggleNavButton>
+        <RadListView [items]="article" marginRight="-2" backgroundColor="#e6e6e6">
+            <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
+                spanCount="2"></ListViewStaggeredLayout>
+            <ng-template tkListItemTemplate let-item="item">
+                <StackLayout margin="15" borderRadius="10">
+                    <!-- <Image src="{{ items.imageSrc }}" width="200" height="120"
+                        stretch="aspectFill"></Image> -->
+                    <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
+                        <Label [text]="item.name" class="item-name" textWrap="true"></Label>
+                        
+                        <Label [text]="item.description" class="item-desc" textWrap="true"></Label>
+                        <Label [text]="item.ingredient" class="item-ing"></Label> -->
+                        <Label [text]="item.price" class="item-price"></Label> -->
+                        
+                    </StackLayout>
+                </StackLayout>
+            </ng-template>
+        </RadListView>
+    </GridLayout>
+
+    <!-- <StackLayout *ngFor="let item of article">
         <Label [text]="item.name"></Label> 
         <Label [text]="item.description"></Label> 
         <Label [text]="item.ingredient"></Label> 
         <Label [text]="item.price"></Label> 
-     </StackLayout>
+     </StackLayout> -->
 		
     
         <!-- <li *ngFor="let a of article">   
@@ -34,5 +52,3 @@
    
     
 
- 
-</FlexboxLayout>

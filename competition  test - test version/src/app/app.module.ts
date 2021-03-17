@@ -1,6 +1,6 @@
 import { BrowserModule} from'@angular/platform-browser'
-import { NgModule, NO_ERRORS_SCHEMA} from "@angular/core";
-import { NativeScriptFormsModule, NativeScriptHttpClientModule, NativeScriptModule, NativeScriptRouterModule, RouterExtensions } from "@nativescript/angular";
+import { NgModule, NO_ERRORS_SCHEMA,NgModuleFactoryLoader} from "@angular/core";
+import { NativeScriptFormsModule, NativeScriptHttpClientModule, NativeScriptModule, NativeScriptRouterModule, RouterExtensions, } from "@nativescript/angular";
 // import { registerElement } from "@nativescript/angular";
 // registerElement("PreviousNextView", () => require("nativescript-iqkeyboardmanager").PreviousNextView);
 
