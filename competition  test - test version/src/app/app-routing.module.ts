@@ -6,10 +6,13 @@ import { SignupComponent} from './signup/signup.component';
 import { PostComponent} from './post/post.component';
 import { PersonelComponent} from './personel/personel.component';
 import { ArticleComponent} from './article/article.component';
+import { Intro1Component} from './intro1/intro1.component';
+import { Intro2Component} from './intro2/intro2.component';
+import { Intro3Component} from './intro3/intro3.component';
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/article", pathMatch: "full" },
+    { path: "", redirectTo: "/intro1", pathMatch: "full" },
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     // { path: "home", loadChildren: "./home/home.module#HomeModule" },
     { path: "login", component: LoginComponent },
@@ -17,6 +20,9 @@ const routes: Routes = [
     { path: "post", component: PostComponent },
     { path: "personel", component: PersonelComponent },
     { path: "article", component: ArticleComponent },
+    { path: "intro1", component: Intro1Component},
+    { path: "intro2", component: Intro2Component},
+    { path: "intro3", component: Intro3Component}
     // { path: "post", loadChildren: () => import("~/app/post/post.module").then((m) => m.PostModule) },
     // { path: "signup", loadChildren: () => import("~/app/signup/signup.module").then((m) => m.SignupModule) }
 

@@ -46,7 +46,7 @@ export class LoginComponent {
         if(this.data.toString()=="Welcome back!"){
             
             // alert('this is login in');
-            this.router.navigate(['/post']);
+            this.router.navigate(['/intro1']);
         }
         else{
             // alert("The account doesn's exist");            

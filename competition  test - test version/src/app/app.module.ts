@@ -24,6 +24,11 @@ import { PersonelComponent } from "./personel/personel.component";
 import { PostComponent } from "./post/post.component";
 import { SignupComponent } from "./signup/signup.component";
 import { ArticleComponent } from "./article/article.component";
+import { Intro1Component } from "./intro1/intro1.component";
+import { Intro2Component } from "./intro2/intro2.component";
+import { Intro3Component } from "./intro3/intro3.component";
+
+
 import { from } from "rxjs";
 import { HttpClientModule } from "@angular/common/http";
 import { DrawerModule } from "@nativescript-community/ui-drawer/angular";
@@ -66,7 +71,11 @@ import { DrawerModule } from "@nativescript-community/ui-drawer/angular";
         SignupComponent,
         PostComponent,
         PersonelComponent,
-        ArticleComponent
+        ArticleComponent,
+        Intro1Component,
+        Intro2Component,
+        Intro3Component
+
         
         
         
