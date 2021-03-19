@@ -25,11 +25,11 @@
     <StackLayout class="form">
             <GridLayout rows="auto, auto, auto" class="page2">
                 <StackLayout row="0">
-                   
+                    
                     <Label horizontal-align="center" text="&#xf083;" class="fas fa-camera-retro"  style="font-size:50px; horizontal-align:center;"  color="green"></Label>
 				</StackLayout>
                 <StackLayout row="1">
-                    <Label class="header3" text="Take a photo of your prouct" color="black"></Label>
+                    <Label class="header3" text="Take a photo of your prouct" color="black" ></Label>
                    
 				</StackLayout>
                 <StackLayout row="2">
@@ -41,7 +41,7 @@
             <GridLayout rows="auto, auto, auto,auto,auto,auto">
 				<StackLayout row="0">
                    
-					<Button text="Take Photo" class="btn-primary1"></Button>
+					<Button text="Take Photo" class="btn-primary1" (tap)="takePicture()"></Button>
 				</StackLayout>
                 <StackLayout row="1" class="input-field">
                     <Label class="header2" text="Name" color="white"></Label>
