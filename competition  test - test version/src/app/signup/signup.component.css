@@ -24,22 +24,17 @@
     vertical-align: middle;
   }
   
-  .logo {
-    margin-bottom: 12;
-    height: 90;
-    font-weight: bold;
-  }
+  
   .header {
     horizontal-align: left;
-    font-size: 40;
+    font-size: 32px;
     font-weight: 400;
-    margin-bottom: 30;
     text-align: center;
     color: #19462b;
   }
   .signuptext {
     horizontal-align: left;
-    font-size: 20;
+    font-size: 16px;
     font-weight: 400;
     font-style: normal;
     font-family: Lato, Arial;
@@ -54,9 +49,7 @@
     
   }
   
-  .input-field {
-    margin-bottom: 25;
-  }
+  
   .input {
     font-size: 18;
     placeholder-color: #A8A8A8;
@@ -112,11 +105,9 @@
     color: #105029;
     font-size: 16;
     text-decoration: underline;
-    margin-top: 20px;
+    
   }
-  .sign-up-label {
-    margin-bottom: 20;
-  }
+  
   /* .bold {
     color: #000000; 
   } */

@@ -1,0 +1,119 @@
+<ActionBar title="detail" class="action-bar">
+    <!-- <Button left="250" text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button> -->
+    <!-- <Label horizontal-align="center" text="&#xf0c9;" class="fas fa-bars sidedrawer-item"  style="font-size:30px" (tap)="openDrawer()" ></Label> -->
+    <ActionItem >
+        <Label horizontal-align="left" text="&#xf0c9;" class="fas fa-bars sidedrawer-item"  style="font-size:30px" (tap)="openDrawer()" ></Label>
+    </ActionItem>
+</ActionBar>    
+
+    
+
+
+    
+    
+
+
+  <RadSideDrawer #sidedrawerId drawerTransition="PushTransition">
+    
+    <AbsoluteLayout tkMainContent dock="top" backgroundColor="rgb(149, 213, 178)">
+        <GridLayout tkExampleTitle tkToggleNavButton>
+            <RadListView [items]="article" marginRight="-2" backgroundColor="rgb(149, 213, 178)">
+                <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
+                    spanCount="2"></ListViewStaggeredLayout>
+                <ng-template tkListItemTemplate let-item="item">
+                    <StackLayout>
+                        <Image src="https://placem.at/things?w=500&txt=0&random=9" width="200" height="120"
+                            stretch="aspectFill"></Image>
+                        <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
+                            <Label [text]="item.name" class="item-name" textWrap="true"></Label>
+                            
+                            <Label [text]="item.description" class="item-desc" textWrap="true"></Label>
+                            <Label [text]="item.ingredient" class="item-ing"></Label> -->
+                            <Label [text]="item.price" class="item-price"></Label> -->
+                            
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+    </AbsoluteLayout>
+
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <StackLayout class="sidedrawer-header">
+            <Image src="~/images/profile.jpg" class="profileimg"></Image>
+            <Label class="sidedrawer-header-text var" text="Akira Wu"></Label>
+            <Label class="sidedrawer-header-footnote var" text="EDIT Profile"></Label>
+        </StackLayout>
+
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Home" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf2bb;" class="fa sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Explore" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item sidedrawer-list-item-active"
+                    title="Settings" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf07a;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Transactions" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Search" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf2c1;" class="fa sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Profile" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Camera" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf013;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Setting" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Store" tap="onNavigationItemTap">
+                    <Label row="0" col="0" text="&#xf086;" class="fas sidedrawer-item" style="font-size:30px"></Label>
+                    <Label row="0" col="1" text="Contact us" class="var m-l-10 sidedrawer-item" color="black"></Label>
+                   
+                </GridLayout>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" title="LogOut" tap="onNavigationItemTap">
+                    <Label class="profiletext" text="Logout"   (tap)="onCloseDrawerTap()"></Label>
+                </GridLayout>
+                <StackLayout class="hr-light"></StackLayout>
+                <!-- <Label class="profiletext" text="Logout"    (tap)="onCloseDrawerTap()"></Label> -->
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+    <!-- <StackLayout *ngFor="let item of article">
+        <Label [text]="item.name"></Label> 
+        <Label [text]="item.description"></Label> 
+        <Label [text]="item.ingredient"></Label> 
+        <Label [text]="item.price"></Label> 
+     </StackLayout> -->
+		
+    
+        <!-- <li *ngFor="let a of article">   
+            {{a}}
+          
+        </li> -->
+        <!-- <li *ngFor="let a of (article| keyvalue)">   
+            {{a.key}}
+          
+        </li> -->
+        
+        <!-- <Button text="Test" class="btn-primary" col="0" (tap)="submit3()"></Button> -->
+        
+       
+   
+    
+
