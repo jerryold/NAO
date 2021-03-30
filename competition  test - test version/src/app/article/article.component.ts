@@ -84,6 +84,10 @@ export class ArticleComponent implements AfterViewInit,OnInit
     public onCloseDrawerTap() {
         this.drawer.closeDrawer();
     }
+
+    public Backpage() {
+        this.router.navigate(["post"]);
+    }
    
     
     
