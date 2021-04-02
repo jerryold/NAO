@@ -40,6 +40,8 @@
     "@nativescript/core": "~7.1.0",
     "@nativescript/theme": "~3.0.0",
     "@syncfusion/ej2-data": "^18.4.46",
+    "@nativescript/imagepicker": "1.0.0",
+    "@nativescript/camera": "5.0.2",
     "email-validator": "^2.0.4",
     "kinvey-nativescript-sdk": "^6.0.1",
     "nativescript-barcodescanner": "^4.0.1",

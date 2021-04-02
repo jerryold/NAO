@@ -4,6 +4,9 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import {Router} from '@angular/router';
 import { Post } from "../shared/post/post";
 import {PostService} from '../shared/post/post.service';
+import * as camera from "@nativescript/camera";
+import { Image } from "@nativescript/core";
+
 
 
 
@@ -45,6 +48,27 @@ export class PostComponent  {
                 () => alert('Unfortunately we were unable to create your publish.')
             );
     }
+    photo(){
+        
+        camera.takePicture()
+        .then((imageAsset) => {
+            console.log("Result is an image asset instance");
+            var image = new Image();
+            image.src = imageAsset;
+        }).catch((err) => {
+            console.log("Error -> " + err.message);
+        });
+    }
+    getPermission() {
+        camera.requestPermissions().then(
+          function success() {
+            console.log('granted');
+          }, 
+          function failure() {
+            console.log('failure');
+          }
+          );
+      }
 
     
 

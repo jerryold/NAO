@@ -41,8 +41,8 @@
 
             <GridLayout rows="auto, auto, auto,auto,auto,auto">
 				<StackLayout row="0">
-                   
-					<Button text="Take Photo" class="btn-primary1"></Button>
+                    <Button text="Take Permissions" (tap)="getPermission()"></Button>
+					<Button text="Take Photo" class="btn-primary1" (tap)="photo()"></Button>
 				</StackLayout>
                 <StackLayout row="1" class="input-field">
                     <Label class="header2" text="Name" color="white"></Label>
