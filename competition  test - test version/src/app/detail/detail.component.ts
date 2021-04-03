@@ -9,6 +9,7 @@ import { NativeScriptFormsModule } from "@nativescript/angular";
 import { HttpErrorResponse } from "@angular/common/http";
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { RouterExtensions } from '@nativescript/angular'
 
 
 
@@ -38,6 +39,7 @@ export class DetailComponent implements AfterViewInit,OnInit
     constructor(
         private _changeDetectionRef: ChangeDetectorRef,
         private router:Router, 
+        private routerExtensions: RouterExtensions,
         private postService:PostService) 
     { 
         // this.article=[];
@@ -83,6 +85,9 @@ export class DetailComponent implements AfterViewInit,OnInit
 
     public onCloseDrawerTap() {
         this.drawer.closeDrawer();
+    }
+    onCloseTap(): void {
+        this.routerExtensions.back();
     }
    
     
