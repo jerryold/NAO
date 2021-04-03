@@ -102,6 +102,7 @@ export class ArticleComponent implements AfterViewInit,OnInit
                 curve: "easeIn"
             }
         }]);
+        
     }
    
     
