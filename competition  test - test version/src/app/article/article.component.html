@@ -17,15 +17,15 @@
 
   <RadSideDrawer #sidedrawerId drawerTransition="PushTransition">
     
-    <AbsoluteLayout tkMainContent dock="top" backgroundColor="rgb(149, 213, 178)">
-        <GridLayout tkExampleTitle tkToggleNavButton>
+    <GridLayout tkMainContent dock="top" backgroundColor="rgb(149, 213, 178)">
+        <!-- <GridLayout tkExampleTitle tkToggleNavButton> -->
             <RadListView [items]="article" marginRight="-2" backgroundColor="rgb(149, 213, 178)">
                 <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
                     spanCount="2"></ListViewStaggeredLayout>
                 <ng-template tkListItemTemplate let-item="item">
                     <StackLayout>
-                        <Image src="https://placem.at/things?w=500&txt=0&random=9" (tap)="showItem(item.id)" width="200" height="120"
-                            stretch="aspectFill"></Image>
+                        <Image src="https://placem.at/things?w=500&txt=0&random=9"  width="200" height="120"
+                            stretch="aspectFill" (tap)="showItem(item.id)"></Image>
                         <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
                             <Label [text]="item.name" class="item-name" textWrap="true"></Label>
                             
@@ -37,8 +37,8 @@
                     </StackLayout>
                 </ng-template>
             </RadListView>
-        </GridLayout>
-    </AbsoluteLayout>
+        <!-- </GridLayout> -->
+    </GridLayout>
 
     <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
         <StackLayout class="sidedrawer-header">
