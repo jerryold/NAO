@@ -3,5 +3,6 @@ export class Post {
     description:string;
     ingredient: string;
     price:number;
+    by:string;
           
 }

@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 import {Router} from '@angular/router';
 import {User} from '../shared/user/user';
 import {UserService} from '../shared/user/user.service';
+var fileSystemModule = require("file-system");
+var fileName = "persistedFile.json";
+var file = fileSystemModule.knownFolders.documents().getFile(fileName);
+
 
 
 
@@ -63,12 +67,15 @@ export class LoginComponent {
    
     private login()
     {
-       
+        file.writeText(JSON.stringify(this.user));
         this.userService.login(this.user)
         .subscribe(
             
             (data) => 
             {
+                file.readText().then(function(content) {
+                    alert(content)
+                  });
                 alert(data);
                 this.data=data;
                 

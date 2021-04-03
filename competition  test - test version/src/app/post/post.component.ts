@@ -6,9 +6,22 @@ import { Post } from "../shared/post/post";
 import {PostService} from '../shared/post/post.service';
 import * as camera from "@nativescript/camera";
 import { Image } from "@nativescript/core";
+import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
+var fileSystemModule = require("file-system");
+var fileName = "persistedFile.json";
+var file = fileSystemModule.knownFolders.documents().getFile(fileName);
 
+// var email = file.readText().then(function(content) {
+//     // alert(content);
+//     // JSON.parse(content);
+//     return JSON.parse(content).email;
+//   })
 
-
+// const printAddress = () => {
+//     email.then((a) => {
+//         alert(a);
+//     });
+// };
 
 @Component({
     selector: "Post",
@@ -19,7 +32,7 @@ import { Image } from "@nativescript/core";
    
     
 })
-export class PostComponent  { 
+export class PostComponent  implements OnInit{ 
     
     public post: Post;
 
@@ -35,18 +48,34 @@ export class PostComponent  {
        this.publish();
               
     }
+    ngOnInit() {
+        //printAddress();
+        // alert(JSON.stringify(file.readText().then(function(content) {
+        //     // alert(content);
+        //     // JSON.parse(content);
+        //     return JSON.parse(content).email;
+        //   })));
+    }
     private publish()
-    {
-        this.postService.Publish(this.post)
-            .subscribe(
-                (data) => {   //function()
-                    alert(data);
-                    this.router.navigate(['/article']);
+    {   
+        // this.post.by= file.readText().then(function(content) {
+        //     alert(content);
+        //     JSON.parse(content);
+        //     return JSON.parse(content).email;
+        //   });
+        // alert(JSON.stringify(this.post));
+        this.postService.Publish(this.post, file)
+        this.router.navigate(['/article']);
+            // .subscribe(
+            //     (data) => {   //function()
+            //         alert(data);
+                    
+            //         this.router.navigate(['/article']);
 
                     
-                },
-                () => alert('Unfortunately we were unable to create your publish.')
-            );
+            //     },
+            //     () => alert('Unfortunately we were unable to create your publish.')
+            // );
     }
     photo(){
         
