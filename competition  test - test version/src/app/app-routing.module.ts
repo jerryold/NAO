@@ -13,7 +13,7 @@ import { Intro3Component} from './intro3/intro3.component';
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "", redirectTo: "/article", pathMatch: "full" },
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     // { path: "home", loadChildren: "./home/home.module#HomeModule" },
     { path: "login", component: LoginComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: "post", component: PostComponent },
     { path: "personel", component: PersonelComponent },
     { path: "article", component: ArticleComponent },
-    { path: "detail", component: DetailComponent },
+    { path: "detail/:id", component: DetailComponent },
     { path: "intro1", component: Intro1Component},
     { path: "intro2", component: Intro2Component},
     { path: "intro3", component: Intro3Component}

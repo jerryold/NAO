@@ -24,7 +24,7 @@
                     spanCount="2"></ListViewStaggeredLayout>
                 <ng-template tkListItemTemplate let-item="item">
                     <StackLayout>
-                        <Image src="https://placem.at/things?w=500&txt=0&random=9" width="200" height="120"
+                        <Image src="https://placem.at/things?w=500&txt=0&random=9" (tap)="showItem(item.id)" width="200" height="120"
                             stretch="aspectFill"></Image>
                         <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
                             <Label [text]="item.name" class="item-name" textWrap="true"></Label>

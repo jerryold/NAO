@@ -14,29 +14,119 @@
 
 
   <RadSideDrawer #sidedrawerId drawerTransition="PushTransition">
-    
-    <AbsoluteLayout tkMainContent dock="top" backgroundColor="rgb(149, 213, 178)">
+
+    <AbsoluteLayout tkMainContent dock="top" backgroundColor="white">
         <GridLayout tkExampleTitle tkToggleNavButton>
-            <RadListView [items]="article" marginRight="-2" backgroundColor="rgb(149, 213, 178)">
-                <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
-                    spanCount="2"></ListViewStaggeredLayout>
-                <ng-template tkListItemTemplate let-item="item">
-                    <StackLayout>
-                        <Image src="https://placem.at/things?w=500&txt=0&random=9" width="200" height="120"
-                            stretch="aspectFill"></Image>
-                        <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
-                            <Label [text]="item.name" class="item-name" textWrap="true"></Label>
-                            
-                            <Label [text]="item.description" class="item-desc" textWrap="true"></Label>
-                            <Label [text]="item.ingredient" class="item-ing"></Label> -->
-                            <Label [text]="item.price" class="item-price"></Label> -->
-                            
-                        </StackLayout>
+
+
+            <StackLayout class="main" verticalAlignment="top">
+                <GridLayout class="anim-cover" rows="auto" columns="*">
+                    <Image row="0" col="0" marginTop="-40" height="180" stretch="aspectFill"
+                        class="card-img" src="https://placem.at/things?w=500&txt=0&random=9"></Image>
+                    <Label row="0" col="0" verticalAlignment="top" horizontalAlignment="left"
+                        (tap)="onCloseTap()" fontSize="24" text="&#xf060;" class="fa close">
+                    </Label>
+                </GridLayout>
+            
+                <!-- <ScrollView class="anim-images" orientation="horizontal">
+                    <StackLayout orientation="horizontal" class="">
+                        <GridLayout *ngFor="let imageString of item.images" rows="auto"
+                            columns="*">
+                            <Image class="card-img-thumb" row="0" col="0" [src]="imageString"
+                                stretch="aspectFill"></Image>
+                            </GridLayout>
                     </StackLayout>
+                </ScrollView> -->
+                <GridLayout rows="auto,auto,auto,auto" columns="auto" class="content">
+
+                    <GridLayout *ngIf="item"  class="anim-itemInfo" marginTop="15" row="1"
+                        width="100%" columns="auto,*" rows="auto,auto,auto,auto"
+                        verticalAlignment="center">
+                        <Label text="categoryIcon() " row="0" col="0" rowSpan="2"
+                class="fa category-icon"></Label>
+                <ng-template  let-item="item">
+                        <Label row="0" col="1" class="item-name" textwrap="true"
+                            verticalAlignment="bottom" horizontalAlignment="left" [text]="item.name"></Label>
+            
+                            <Label row="1" col="1" class="item-category" textwrap="true"
+                            verticalAlignment="top" horizontalAlignment="left" text="item.category"></Label>
+                        <Label row="2" col="1" class="item-category" text="'Average Rate:' + item.rating "></Label>
                 </ng-template>
-            </RadListView>
+            
+                        <StackLayout row="3" col="1" orientation="horizontal">
+                            <Label class="fa rate" text="&#xf005;"></Label>
+                            <Label class="fa rate" text="&#xf005;"></Label>
+                            <Label class="fa rate" text="&#xf005;"></Label>
+                            <Label class="fa rate" text="&#xf005;"></Label>
+                            <Label class="fa rate" text="&#xf123;"></Label>
+                        </StackLayout>
+            
+            
+                    </GridLayout>
+            
+                    <StackLayout class="line anim-likes" row="2" width="100%" marginTop="10"></StackLayout>
+            
+                    <GridLayout *ngIf="article" columns="auto,*,auto,auto" rows="auto"
+                        marginTop="5" width="100%" row="3" class="anim-likes">
+                        <GridLayout col="0" rows="auto" columns="auto,auto">
+                            <!-- <Label col="0" row="0" #like [class]="item.isLike ? 'fa like-icon liked-active' : 'fa like-icon default'"
+                                [text]="item.isLike ? '&#xf164;':'&#xf087;'"></Label> -->
+                            <Label col="1" row="0" class="layout" [text]="article.price"></Label> -->
+                        </GridLayout>
+                        <StackLayout col="1" orientation="horizontal" marginLeft="15">
+                            <Label ref="" class="like-icon layout fa" text="&#xf0e5;"></Label>
+                            <Label class="layout" [text]="article.description"></Label>
+                        </StackLayout>
+                        <GridLayout col="2" rows="auto" columns="auto,auto" 
+                            marginRight="15">
+                            <Label col="0" row="0"></Label>
+                            <Label col="1" row="0" class="layout" text="Favorite"></Label>
+                        </GridLayout>
+                        <StackLayout col="3" orientation="horizontal">
+                            <Label ref="" class="like-icon layout fa" text="&#xf045;"></Label>
+                            <Label class="layout" text="Share"></Label>
+                        </StackLayout>
+            
+                    </GridLayout>
+                </GridLayout>
+                <StackLayout width="100%" class="lineBreak anim-likes"></StackLayout>
+                   
+                <Gridlayout rows="auto,*" class="content anim-content" marginTop="15">
+
+                    <GridLayout row="0" rows="auto" marginBottom="5" columns="auto, auto">
+                        <Label col="0" text="&#xf02c;" class="fa description-icon"
+                            textWrap="true"></Label>
+                        <Label col="1" class="description-text" text="Description"
+                            textWrap="true"></Label>
+                    </GridLayout>
+            
+                    <StackLayout row="1">
+                        <ScrollView>
+                            <StackLayout verticalAlignment="top" horizontalAlignment="left"
+                                *ngIf="article">
+                                <Textview editable="false" class="description-value"
+                                    textWrap="true" [text]="article.description">
+                                </Textview>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+            
+            
+                </Gridlayout>
+
+            </StackLayout>
+        
+        
         </GridLayout>
     </AbsoluteLayout>
+
+   
+
+
+
+
+
+
 
     <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
         <StackLayout class="sidedrawer-header">

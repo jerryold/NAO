@@ -76,7 +76,7 @@ export class LoginComponent {
                 file.readText().then(function(content) {
                     alert(content)
                   });
-                alert(data);
+                // alert(data);
                 this.data=data;
                 
                 

@@ -6,10 +6,19 @@ import { Post } from "../shared/post/post";
 import {PostService} from '../shared/post/post.service';
 import * as camera from "@nativescript/camera";
 import { Image } from "@nativescript/core";
+import { ImageSource, knownFolders, path } from '@nativescript/core';
+import * as fs from "@nativescript/core/file-system";
 import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 var fileSystemModule = require("file-system");
 var fileName = "persistedFile.json";
 var file = fileSystemModule.knownFolders.documents().getFile(fileName);
+var imageModule = require("@nativescript/core/ui/image");
+const imageSource = require('@nativescript/core/image-source')
+ 
+var options = { width: 300, height: 300, keepAspectRatio: false, saveToGallery: true };
+
+
+
 
 // var email = file.readText().then(function(content) {
 //     // alert(content);
@@ -35,11 +44,18 @@ var file = fileSystemModule.knownFolders.documents().getFile(fileName);
 export class PostComponent  implements OnInit{ 
     
     public post: Post;
+    public bstring;
+    public saveImage;
+    public picHeight;
+
+    
 
     constructor(
         private router:Router, 
-        private postService:PostService) 
+        private postService:PostService
+        ) 
     {
+        
         this.post=new Post();
     }
 
@@ -49,12 +65,7 @@ export class PostComponent  implements OnInit{
               
     }
     ngOnInit() {
-        //printAddress();
-        // alert(JSON.stringify(file.readText().then(function(content) {
-        //     // alert(content);
-        //     // JSON.parse(content);
-        //     return JSON.parse(content).email;
-        //   })));
+       this.getPermission();
     }
     private publish()
     {   
@@ -78,8 +89,8 @@ export class PostComponent  implements OnInit{
             // );
     }
     photo(){
-        
-        camera.takePicture()
+       
+        camera.takePicture(options)
         .then((imageAsset) => {
             console.log("Result is an image asset instance");
             var image = new Image();
@@ -87,7 +98,49 @@ export class PostComponent  implements OnInit{
         }).catch((err) => {
             console.log("Error -> " + err.message);
         });
+        
+    //     const source = new ImageSource();
+
+
+
     }
+    // photo(){
+    //     camera.takePicture(options).
+    //     then((imageAsset) => {
+    //         console.log("Size: " + imageAsset.options.width + "x" + imageAsset.options.height);
+    //         console.log("keepAspectRatio: " + imageAsset.options.keepAspectRatio);
+    //         console.log("Photo saved in Photos/Gallery for Android or in Camera Roll for iOS");
+    
+    //         const imgPhoto = new ImageSource();
+    
+    //         const that = this;
+    
+    //         imgPhoto.fromAsset(imageAsset).then((imgSrc) => {
+    //             if (imgSrc) {
+    
+    //                 // This is the base64 string, I saved it to a global variable to be used later
+    //                 that.bstring = imgSrc.toBase64String("jpg");
+    
+    //                 console.log(that.bstring);
+    
+    //                 // This bit saves it as an 'Image' to the app
+    //                 const mil = new Date().getTime();
+    //                 const folder = fs.knownFolders.documents();
+    //                 const path = fs.path.join(folder.path, `SaveImage${mil}`);
+    //                 const saved = imgPhoto.saveToFile(path, "png");
+    
+    //                 // This saves the image to the global variable which will be used to display it on the screen
+    //                 that.saveImage = path;
+    //                 that.picHeight = imgSrc.height;
+    
+    //             } else {
+    //                 alert("Image source is bad.");
+    //             }
+    //         });
+    //     }).catch((err) => {
+    //         console.log("Error -> " + err.message);
+    //     });
+    // }
     getPermission() {
         camera.requestPermissions().then(
           function success() {
@@ -98,6 +151,7 @@ export class PostComponent  implements OnInit{
           }
           );
       }
+     
 
     
 

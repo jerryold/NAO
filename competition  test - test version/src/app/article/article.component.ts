@@ -9,6 +9,7 @@ import { NativeScriptFormsModule } from "@nativescript/angular";
 import { HttpErrorResponse } from "@angular/common/http";
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { RouterExtensions } from '@nativescript/angular';
 
 
 
@@ -37,8 +38,10 @@ export class ArticleComponent implements AfterViewInit,OnInit
     
     constructor(
         private _changeDetectionRef: ChangeDetectorRef,
+        private routerExtensions: RouterExtensions,
         private router:Router, 
-        private postService:PostService) 
+        private postService:PostService
+        ) 
     { 
         // this.article=[];
         
@@ -87,6 +90,18 @@ export class ArticleComponent implements AfterViewInit,OnInit
 
     public Backpage() {
         this.router.navigate(["post"]);
+    }
+
+    showItem(itemId) {
+        console.log(`Tapped on ${itemId}`);
+        this.routerExtensions.navigate(["detail/" + itemId, {
+            animated: true,
+            transition: {
+                name: "slideTop",
+                duration: 380,
+                curve: "easeIn"
+            }
+        }]);
     }
    
     
