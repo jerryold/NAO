@@ -35,7 +35,7 @@ export class Intro3Component  implements AfterViewInit,OnInit{
     }
     public submit()
     {
-        this.router.navigate(["post"]);
+        this.router.navigate(["article"]);
     }
     
     ngOnInit(): void {

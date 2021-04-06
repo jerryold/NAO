@@ -3,6 +3,7 @@ import { Post } from './post';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { Config2 } from '../config';
+import { Config3 } from '../config';
 import { resolveFileNameFromUrl } from '@nativescript/core';
 
 
@@ -10,6 +11,7 @@ import { resolveFileNameFromUrl } from '@nativescript/core';
 
 @Injectable()
 export class PostService {
+    private _selectedId = -1;
     constructor(private http: HttpClient) { }
 
     public Publish(post: Post, file) {
@@ -38,25 +40,6 @@ export class PostService {
                
             ).subscribe(data =>{alert(data);});
         });  
-        // return {
-        //     'statusCode': 200,
-        //     'body': 'ok'
-        // }
-        // return this.http.post(
-        //     Config2.apiUrl,
-        //     JSON.stringify({
-        //         action: "post",
-        //         info: JSON.stringify({
-        //             name: post.name,
-        //             description: post.description,
-        //             ingredient: post.ingredient,
-        //             price: post.price,
-        //              by: data.by,
-                    
-        //         })
-        //     }),
-           
-        // );
     }
     public Article() {
         return this.http.post(
@@ -71,14 +54,47 @@ export class PostService {
            
         );
     }
+
+    public Order(post: Post, file) {
+        var that = this;
+        file.readText().then(function(content) {
+                // alert(content);
+                // JSON.parse(content);
+                var data1 = post;
+                alert(content);
+                data1.customer = JSON.parse(content).email
+                return data1
+                // return JSON.parse(content).email;
+        }).then(function(data1) { 
+            alert(JSON.stringify(data1));
+            return that.http.post(
+                Config3.apiUrl,
+                JSON.stringify({
+                    action: "order",
+                    info: JSON.stringify({
+                        customer:data1.customer,
+                        item:data1.post_id
+                    })
+                }),
+               
+            ).subscribe(data =>{alert(data);});
+        });  
+    
+    }
+    
     public HandleError(e:any):void{
         alert(e.error.error);
         
     }
+
+    
+
+
     // public getData(
     //     ):Observable<any>{
     //     const apiUrl="https://5jnvpazsz8.execute-api.us-east-1.amazonaws.com/default/NAO-savePost"
     //     return this.http.get<any>(apiUrl);
     // }
-    
+
+       
 }

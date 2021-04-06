@@ -10,6 +10,9 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { RouterExtensions } from '@nativescript/angular'
+var fileSystemModule = require("file-system");
+var fileName = "persistedFile.json";
+var file = fileSystemModule.knownFolders.documents().getFile(fileName);
 
 
 
@@ -24,15 +27,18 @@ import { RouterExtensions } from '@nativescript/angular'
 })
 export class DetailComponent implements AfterViewInit,OnInit
 { 
+    public post: Post;
    
-    public item:Array<any>=new Array<any>();
-    items: { name: string, desc: string, price: string, imageSrc: string }[] = [
+    itemId: number;
+    item: Post;
+    items: Array<Post>;
+    itemimage: { name: string, desc: string, price: string, imageSrc: string }[] = [
         { name: "Pancakes!", desc: "Everybody* loves gluten.", price: "$5", imageSrc: "https://placem.at/things?w=500&txt=0&random=9" },
        
     ];
 
 
-    public article:Array<any> = new Array<any>();//因為會有多筆，先建一個any型別的陣列資料來接回傳值
+    public article1:Array<any> = new Array<any>();//因為會有多筆，先建一個any型別的陣列資料來接回傳值
     private _mainContentText: string;
 
     
@@ -40,10 +46,17 @@ export class DetailComponent implements AfterViewInit,OnInit
         private _changeDetectionRef: ChangeDetectorRef,
         private router:Router, 
         private routerExtensions: RouterExtensions,
-        private postService:PostService) 
+        private postService:PostService,
+        ) 
     { 
-        // this.article=[];
-        
+        // this.page.actionBarHidden = true;
+
+        // this.pageRoute.activatedRoute.pipe(
+        //     switchMap(activatedRoute => activatedRoute.params)
+        // ).forEach((params) => {
+        //     this.itemId = +params["id"];            
+        //     this.item = this.article1.filter(item => item.id == this.itemId)[0];
+        // });
     }
 
     @ViewChild("sidedrawerId") public drawerComponent: RadSideDrawerComponent;
@@ -66,10 +79,10 @@ export class DetailComponent implements AfterViewInit,OnInit
         this.postService.Article()
         .subscribe(
             (response:any)=>{
-                this.article=response;
+                this.article1=response;
                 // alert(this.article)
                 
-                console.log(this.article);
+                console.log(this.article1);
                
                 
             },
@@ -90,6 +103,11 @@ export class DetailComponent implements AfterViewInit,OnInit
         this.routerExtensions.back();
     }
    
+    public order(){
+        this.postService.Order(this.post, file)
+        alert("order success");
+
+    }
     
     
     

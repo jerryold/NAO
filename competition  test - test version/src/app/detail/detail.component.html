@@ -16,7 +16,7 @@
   <RadSideDrawer #sidedrawerId drawerTransition="PushTransition">
     <GridLayout tkMainContent dock="top" backgroundColor="rgb(149, 213, 178)">
         <!-- <GridLayout tkExampleTitle tkToggleNavButton> -->
-            <RadListView [items]="article" marginRight="-2" backgroundColor="rgb(149, 213, 178)">
+            <RadListView [items]="article1" marginRight="-2" backgroundColor="rgb(149, 213, 178)">
                 <!-- <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
                     spanCount="2"></ListViewStaggeredLayout> -->
                 <ng-template tkListItemTemplate let-item="item">
@@ -25,12 +25,11 @@
                             stretch="aspectFill"></Image>
                         <StackLayout  backgroundColor="rgb(27, 67, 50)" padding="10">
                             <Label [text]="item.id" class="item-name" textWrap="true"></Label>
-                            
-                            <!-- <Label [text]="item.description" class="item-desc" textWrap="true"></Label>
-                            <Label [text]="item.ingredient" class="item-ing"></Label> -->
-                            <!-- <Label [text]="item.price" class="item-price"></Label> --> 
+                            <Label [text]="item.post_id" class="item-name" textWrap="true"></Label>
+                          
                             
                         </StackLayout>
+                        <Button text="Order" class="btn-primary" col="1" (tap)='order()'></Button>
                     </StackLayout>
                 </ng-template>
             </RadListView>

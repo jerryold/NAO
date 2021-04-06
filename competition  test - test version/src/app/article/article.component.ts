@@ -13,6 +13,7 @@ import { RouterExtensions } from '@nativescript/angular';
 
 
 
+
 @Component({
     selector: "Post",
     providers:[PostService],
@@ -30,6 +31,7 @@ export class ArticleComponent implements AfterViewInit,OnInit
         { name: "Pancakes!", desc: "Everybody* loves gluten.", price: "$5", imageSrc: "https://placem.at/things?w=500&txt=0&random=9" },
        
     ];
+  
 
 
     public article:Array<any> = new Array<any>();//因為會有多筆，先建一個any型別的陣列資料來接回傳值
@@ -43,7 +45,7 @@ export class ArticleComponent implements AfterViewInit,OnInit
         private postService:PostService
         ) 
     { 
-        // this.article=[];
+        
         
     }
 
@@ -94,6 +96,7 @@ export class ArticleComponent implements AfterViewInit,OnInit
 
     showItem(itemId) {
         console.log(`Tapped on ${itemId}`);
+        
         this.routerExtensions.navigate(["detail/" + itemId, {
             animated: true,
             transition: {
