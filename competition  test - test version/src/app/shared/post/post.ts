@@ -5,7 +5,6 @@ export class Post {
     ingredient: string;
     price:number;
     by:string;
-    post_by:string;
     customer:string;
-    item:string;          
+    post_id:string;          
 }

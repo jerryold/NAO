@@ -47,8 +47,10 @@ export class DetailComponent implements AfterViewInit,OnInit
         private router:Router, 
         private routerExtensions: RouterExtensions,
         private postService:PostService,
+        
         ) 
     { 
+       
         // this.page.actionBarHidden = true;
 
         // this.pageRoute.activatedRoute.pipe(
@@ -70,6 +72,7 @@ export class DetailComponent implements AfterViewInit,OnInit
     ngOnInit()
     {
         this.getData();
+        
     }
     // submit3()
     // {
@@ -103,8 +106,8 @@ export class DetailComponent implements AfterViewInit,OnInit
         this.routerExtensions.back();
     }
    
-    public order(){
-        this.postService.Order(this.post, file)
+    public order(item){
+        this.postService.Order(item, file)
         alert("order success");
 
     }

@@ -70,7 +70,7 @@ export class PostService {
             return that.http.post(
                 Config3.apiUrl,
                 JSON.stringify({
-                    action: "order",
+                    action: "Order",
                     info: JSON.stringify({
                         customer:data1.customer,
                         item:data1.post_id
